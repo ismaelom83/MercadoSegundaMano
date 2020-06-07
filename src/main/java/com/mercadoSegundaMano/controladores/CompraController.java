@@ -42,6 +42,7 @@ public class CompraController {
 	
 	@ModelAttribute("carrito")
 	public List<Producto> productosCarrito() {
+		@SuppressWarnings("unchecked")
 		List<Long> contenido = (List<Long>) session.getAttribute("carrito");
 		return (contenido == null) ? null : productoServicio.variosPorId(contenido);
 	}
@@ -71,6 +72,7 @@ public class CompraController {
 	
 	@GetMapping("/carrito/add/{id}")
 	public String addCarrito(Model model, @PathVariable Long id) {
+		@SuppressWarnings("unchecked")
 		List<Long> contenido = (List<Long>) session.getAttribute("carrito");
 		if (contenido == null)
 			contenido = new ArrayList<>();
@@ -82,6 +84,7 @@ public class CompraController {
 	
 	@GetMapping("/carrito/eliminar/{id}")
 	public String borrarDeCarrito(Model model, @PathVariable Long id) {
+		@SuppressWarnings("unchecked")
 		List<Long> contenido = (List<Long>) session.getAttribute("carrito");
 		if (contenido == null)
 			return "redirect:/public";
@@ -96,6 +99,7 @@ public class CompraController {
 	
 	@GetMapping("/carrito/finalizar")
 	public String checkout() {
+		@SuppressWarnings("unchecked")
 		List<Long> contenido = (List<Long>) session.getAttribute("carrito");
 		if (contenido == null)
 			return "redirect:/public";
