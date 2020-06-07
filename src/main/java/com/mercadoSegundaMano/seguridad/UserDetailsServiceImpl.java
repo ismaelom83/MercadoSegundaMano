@@ -7,10 +7,12 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.mercadoSegundaMano.modelo.Usuario;
 import com.mercadoSegundaMano.repositorios.UsuarioRepository;
 
+@Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	

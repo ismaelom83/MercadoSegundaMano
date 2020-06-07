@@ -9,12 +9,16 @@ import com.mercadoSegundaMano.modelo.Compra;
 import com.mercadoSegundaMano.modelo.Producto;
 import com.mercadoSegundaMano.modelo.Usuario;
 import com.mercadoSegundaMano.repositorios.ProductoRepository;
+import com.mercadoSegundaMano.upload.StorageService;
 
 @Service
 public class ProductoServicio {
 	
 	@Autowired
 	ProductoRepository repositorio;
+	
+	@Autowired
+	StorageService storageService;
 	
 	public Producto insertar(Producto p) {
 		return repositorio.save(p);
@@ -36,6 +40,12 @@ public class ProductoServicio {
 	
 	public List<Producto> findAll() {
 		return repositorio.findAll();
+	}
+	
+	public void borrar(Producto p) {
+		if (!p.getImagen().isEmpty())
+			storageService.delete(p.getImagen());
+		repositorio.delete(p);
 	}
 	
 	public List<Producto> productosDeUnPropietario(Usuario u) {
