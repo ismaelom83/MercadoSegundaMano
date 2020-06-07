@@ -1,4 +1,0 @@
-2020-06-07 19:41:55 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "IMAGEN VARCHAR(255)": "'https://www.decathlon.es/es/p/bicicleta-de-montana-rockrider-st-100-aluminio-u-fit-27-5-21v-negro/_/R-p-300805?mc=8501699&LGWCO... (273)"
-Value too long for column "IMAGEN VARCHAR(255)": "'https://www.decathlon.es/es/p/bicicleta-de-montana-rockrider-st-100-aluminio-u-fit-27-5-21v-negro/_/R-p-300805?mc=8501699&LGWCO... (273)"; SQL statement:
-insert into producto (compra_id, imagen, nombre, precio, propietario_id, id) values (?, ?, ?, ?, ?, ?) [22001-200]
