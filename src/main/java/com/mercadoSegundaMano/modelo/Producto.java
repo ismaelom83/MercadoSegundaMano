@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-
+import org.hibernate.annotations.GenericGenerator;
 
 
 
@@ -15,6 +15,7 @@ public class Producto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+	@GenericGenerator(name = "native", strategy = "native")
 	private long id;
 	
 	private String nombre; 
